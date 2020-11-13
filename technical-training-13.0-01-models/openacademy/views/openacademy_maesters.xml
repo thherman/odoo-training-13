@@ -6,12 +6,14 @@
     </record>
 
     <record model="ir.ui.view" id="openacademy_maester_form">
-        <field name="name">res.partner.simplified.form.inherit</field>
+        <field name="name">res.partner.form.inherit</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_simple_form" />
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <page string="Open Academy" position="after">
-                <field name="session_ids"/>
+            <page name="internal_notes" position="after">
+                <page string="Open Academy">
+                    <field name="session_ids"/>
+                </page>
             </page>
         </field>
     </record>
