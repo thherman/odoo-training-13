@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem name="Open Academy" id="openacademy_root_menu" web_icon="openacademy,static/icon.jpg"/>
+
+    <menuitem name="Courses" id="openacademy_courses_menu" parent="openacademy_root_menu" action="openacademy.action_courses" sequence="1"/>
+    <menuitem name="Sessions" id="openacademy_sessions_menu" parent="openacademy_root_menu" action="openacademy.action_sessions" sequence="2"/>
+    <menuitem name="Maesters" id="openacademy_maesters_menu" parent="openacademy_root_menu" action="base.action_partner_form" sequence="3"/>
+</odoo>
