@@ -8,12 +8,13 @@ class Session(models.Model):
     _description = "Session of a course"
 
     @api.model
-    def _default_course_id(self):
-        _logger.info(self.env.context)
-        if self.env.context.get("openacademy.course"):
-            return self.env.context.get("openacademy.course")
+    def default_get(self, default_fields):
+        values = super().default_get(default_fields)
+        if 'course_id' in default_fields and values.get('course_id'):
+            parent = self.browse(values.get('course_id'))
+            values['course_id'] = parent.id
+        return values
 
-    _logger.info("YOOOOOOO")
     course_id = fields.Many2one(
         string="Course", comodel_name="openacademy.course", required=True, default=_default_course_id)
 
