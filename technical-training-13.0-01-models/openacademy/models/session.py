@@ -11,5 +11,5 @@ class Session(models.Model):
     maester_id = fields.Many2one(
         string="Maester", comodel_name="res.partner", required=True)
 
-    name = fields.Char(string="Session name")
+    name = fields.Char(string="Session name", required=True)
     course_name = fields.Char(string="Course name", related="course_id.name")
