@@ -7,6 +7,7 @@ class Session(models.Model):
 
     course_id = fields.Many2one(
         string="Course", comodel_name="openacademy.course", required=True)
+
     maester_id = fields.Many2one(
         string="Maester", comodel_name="res.partner", required=True)
 
