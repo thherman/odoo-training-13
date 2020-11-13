@@ -10,6 +10,7 @@ class Session(models.Model):
         "course_id": lambda self,cr,uid,c:_logger.info(c)
     }
 
+    _logger.info("YOOOOOOO")
     course_id = fields.Many2one(
         string="Course", comodel_name="openacademy.course", required=True)
 
