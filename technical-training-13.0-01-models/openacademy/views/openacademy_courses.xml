@@ -3,7 +3,7 @@
         <field name="name">Courses</field>
         <field name="res_model">openacademy.course</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{'course_id':active_id}</field>
+        <field name="context">{'course_id':'active_id'}</field>
     </record>
 
 </odoo>
