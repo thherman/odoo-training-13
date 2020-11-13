@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class Maester(models.Model):
-    _name = "openacademy.maester"
+    _name = "res.partner"
     _inherit = "res.partner"
     _description = "Maester assigned to a session"
 
