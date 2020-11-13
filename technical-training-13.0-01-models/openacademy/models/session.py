@@ -9,9 +9,9 @@ class Session(models.Model):
 
     @api.model
     def _default_course_id(self):
-        _logger.info(self.env["openacademy.course"])
-        if self.env["openacademy.course"]:
-            return self.env["openacademy.course"]
+        _logger.info(self.env.context.get("openacademy.course"))
+        if self.env.context.get("openacademy.course"):
+            return self.env.context.get("openacademy.course")
 
     _logger.info("YOOOOOOO")
     course_id = fields.Many2one(
