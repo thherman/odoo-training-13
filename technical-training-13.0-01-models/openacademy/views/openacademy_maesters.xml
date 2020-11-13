@@ -1,7 +1,6 @@
 <odoo>
     <record model="ir.actions.act_window" id="action_maesters">
         <field name="name">Maesters</field>
-        <field name="inherit_id" ref="base.action_partner_form"/>
         <field name="res_model">openacademy.maester</field>
         <field name="view_mode">tree,form</field>
     </record>
