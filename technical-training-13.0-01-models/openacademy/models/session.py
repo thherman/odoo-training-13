@@ -6,5 +6,6 @@ class Session(models.Model):
     _description = "Session of a course"
 
     name = fields.Char(string="Session name")
-    course_id = fields.Many2one("openacademy.course")
-    maester_id = fields.Many2one(string="Maester", comodel_name="res.partner")
+    course_id = fields.Many2one("openacademy.course", required=True)
+    maester_id = fields.Many2one(
+        string="Maester", comodel_name="res.partner", required=True)

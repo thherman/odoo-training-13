@@ -7,7 +7,7 @@ class Course(models.Model):
 
     name = fields.Char(string="Course name", required=True)
     session_ids = fields.One2many(
-        "openacademy.session", "course_id", "Sessions")
+        "openacademy.session", "course_id", string="Sessions")
 
     level = fields.Selection([
         ('beginner', 'Beginner'),
