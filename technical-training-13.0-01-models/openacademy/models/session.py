@@ -7,6 +7,12 @@ class Session(models.Model):
     _name = "openacademy.session"
     _description = "Session of a course"
 
+    @api.model
+    def _default_course_id(self):
+        _logger.info(self.env["openacademy.course"])
+        if self.env["openacademy.course"]:
+            return self.env["openacademy.course"]
+
     _logger.info("YOOOOOOO")
     course_id = fields.Many2one(
         string="Course", comodel_name="openacademy.course", required=True, default=_default_course_id)
@@ -17,8 +23,4 @@ class Session(models.Model):
     name = fields.Char(string="Session name", required=True)
     course_name = fields.Char(string="Course name", related="course_id.name")
 
-    @api.model
-    def _default_course_id(self):
-        _logger.info(self.env["openacademy.course"])
-        if self.env["openacademy.course"]:
-            return self.env["openacademy.course"]
+    
