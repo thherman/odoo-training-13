@@ -6,9 +6,11 @@ class Course(models.Model):
     _description = "Courses at the OpenAcademy"
 
     name = fields.Char(string="Course name", required=True)
-    level = fields.Selection([
-    ('beginner', 'Beginner'),
-    ('intermediate', 'Intermediate'),
-    ('advanced', 'Advanced'), 
-  ], default='beginner')
+    session_ids = fields.One2many(
+        "openacademy.session", "course_id", "Sessions")
 
+    level = fields.Selection([
+        ('beginner', 'Beginner'),
+        ('intermediate', 'Intermediate'),
+        ('advanced', 'Advanced'),
+    ], default='beginner')
