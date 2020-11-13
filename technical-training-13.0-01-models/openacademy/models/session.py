@@ -9,7 +9,7 @@ class Session(models.Model):
 
     @api.model
     def _default_course_id(self):
-        _logger.info(self.env.context.get("openacademy.course"))
+        _logger.info(self.env.context)
         if self.env.context.get("openacademy.course"):
             return self.env.context.get("openacademy.course")
 
