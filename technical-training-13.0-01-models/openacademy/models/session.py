@@ -6,13 +6,10 @@ _logger = logging.getLogger(__name__)
 class Session(models.Model):
     _name = "openacademy.session"
     _description = "Session of a course"
-    _defaults = {
-        "course_id": lambda self,cr,uid,c:_logger.info(c)
-    }
 
     _logger.info("YOOOOOOO")
     course_id = fields.Many2one(
-        string="Course", comodel_name="openacademy.course", required=True)
+        string="Course", comodel_name="openacademy.course", required=True, default=lambda self,cr,uid,c:_logger.info(c))
 
     maester_id = fields.Many2one(
         string="Maester", comodel_name="res.partner", required=True)
