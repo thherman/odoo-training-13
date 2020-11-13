@@ -10,7 +10,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
-            <page string="Open Academy" position="after">
+            <page name="OpenAcademy" position="after">
                 <field name="session_ids"/>
             </page>
         </field>
