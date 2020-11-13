@@ -6,7 +6,7 @@
     </record>
 
     <record model="ir.ui.view" id="openacademy_maester_form">
-        <field name="name">openacademy.maester.view.form</field>
+        <field name="name">res.partner.simplified.form.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
